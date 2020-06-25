@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Data
 {
@@ -18,6 +19,13 @@ namespace Data
     {
         public static bool InvIsOpened = false;
         public static bool EpStIsOpened = false;
+        public static bool ShopIsOpened = false;
 
+    }
+
+    class Class3
+    {
+        public static bool LogOnOff = false;
+        public static string Log;
     }
 }

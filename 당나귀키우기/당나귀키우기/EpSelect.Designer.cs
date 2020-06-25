@@ -84,6 +84,8 @@
             this.Name = "EpSelect";
             this.Text = "EpSelect";
             this.Load += new System.EventHandler(this.EpSelect_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EpSelect_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EpSelect_MouseMove);
             this.ResumeLayout(false);
             this.PerformLayout();
 

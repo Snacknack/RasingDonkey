@@ -35,8 +35,10 @@
             this.ExpLabel = new System.Windows.Forms.Label();
             this.LvLabel = new System.Windows.Forms.Label();
             this.Refresh = new System.Windows.Forms.Timer(this.components);
-            this.ProgressBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.WriteLog = new System.Windows.Forms.Timer(this.components);
             this.Adventure = new System.Windows.Forms.Button();
+            this.ShopBtn = new System.Windows.Forms.Button();
+            this.LogList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // GoldLabel
@@ -90,11 +92,11 @@
             this.Refresh.Interval = 1;
             this.Refresh.Tick += new System.EventHandler(this.Refresh_Tick);
             // 
-            // ProgressBarTimer
+            // WriteLog
             // 
-            this.ProgressBarTimer.Enabled = true;
-            this.ProgressBarTimer.Interval = 1;
-            this.ProgressBarTimer.Tick += new System.EventHandler(this.ProgressBarTimer_Tick);
+            this.WriteLog.Enabled = true;
+            this.WriteLog.Interval = 1;
+            this.WriteLog.Tick += new System.EventHandler(this.WriteLog_Tick);
             // 
             // Adventure
             // 
@@ -106,11 +108,35 @@
             this.Adventure.UseVisualStyleBackColor = true;
             this.Adventure.Click += new System.EventHandler(this.Adventure_Click_1);
             // 
+            // ShopBtn
+            // 
+            this.ShopBtn.Location = new System.Drawing.Point(93, 346);
+            this.ShopBtn.Name = "ShopBtn";
+            this.ShopBtn.Size = new System.Drawing.Size(75, 50);
+            this.ShopBtn.TabIndex = 0;
+            this.ShopBtn.TabStop = false;
+            this.ShopBtn.Text = "상점";
+            this.ShopBtn.UseVisualStyleBackColor = true;
+            this.ShopBtn.Click += new System.EventHandler(this.ShopBtn_Click);
+            // 
+            // LogList
+            // 
+            this.LogList.Location = new System.Drawing.Point(14, 69);
+            this.LogList.Multiline = true;
+            this.LogList.Name = "LogList";
+            this.LogList.ReadOnly = true;
+            this.LogList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.LogList.Size = new System.Drawing.Size(154, 168);
+            this.LogList.TabIndex = 6;
+            this.LogList.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.LogList);
+            this.Controls.Add(this.ShopBtn);
             this.Controls.Add(this.Adventure);
             this.Controls.Add(this.LvLabel);
             this.Controls.Add(this.ExpLabel);
@@ -137,7 +163,9 @@
         private System.Windows.Forms.Label ExpLabel;
         private System.Windows.Forms.Label LvLabel;
         private System.Windows.Forms.Timer Refresh;
-        private System.Windows.Forms.Timer ProgressBarTimer;
+        private System.Windows.Forms.Timer WriteLog;
         private System.Windows.Forms.Button Adventure;
+        private System.Windows.Forms.Button ShopBtn;
+        private System.Windows.Forms.TextBox LogList;
     }
 }

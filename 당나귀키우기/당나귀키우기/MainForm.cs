@@ -22,6 +22,8 @@ namespace 당나귀키우기
         {
             InitializeComponent();
             Refresh.Enabled = true;
+            
+           
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) // 종료될때 자동 저장
@@ -133,9 +135,19 @@ namespace 당나귀키우기
 
         }
 
-        private void ProgressBarTimer_Tick(object sender, EventArgs e)
+        private void WriteLog_Tick(object sender, EventArgs e)
         {
-         
+            if (Data.Class3.LogOnOff)
+            {
+                LogList.Text += Data.Class3.Log + "\r\n";
+                Data.Class3.Log = "";
+                this.LogList.SelectionStart = LogList.Text.Length;
+                this.LogList.ScrollToCaret();
+
+      
+                Data.Class3.LogOnOff = false;
+            }      
+
         }
 
         private void Adventure_Click_1(object sender, EventArgs e)
@@ -147,6 +159,17 @@ namespace 당나귀키우기
                 epselect.Location = new Point(this.Location.X + 280, this.Location.Y + 100);
                 Data.Class2.EpStIsOpened = true;
             }
+        }
+
+        private void ShopBtn_Click(object sender, EventArgs e)
+        {
+            Shop shop = new Shop();
+            if (Data.Class2.ShopIsOpened == false)
+            {
+                shop.Show();
+                shop.Location = new Point(this.Location.X, this.Location.Y);
+                Data.Class2.ShopIsOpened = true;
+            }   
         }
     }
 }
