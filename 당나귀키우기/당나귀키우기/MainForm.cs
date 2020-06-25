@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +31,9 @@ namespace 당나귀키우기
             try
             {
                 formatter.Serialize(SaveData, Data.Class1.Gold);
+                formatter.Serialize(SaveData, Data.Class1.Exp);
+                formatter.Serialize(SaveData, Data.Class1.Level);
+                formatter.Serialize(SaveData, Data.Class1.RequiredExp);
             }
             catch
             {
@@ -47,20 +51,25 @@ namespace 당나귀키우기
             OpenFile(sender, e);
         }
 
-    
-        
-            
-        
+
+
+
+
+
 
         private void OpenFile(object sender, EventArgs e) // 불러오기
         {
-            FileStream OpenData = new FileStream("DataFile.dat", FileMode.Open);
-            if(!(OpenData == null))
+            if (File.Exists("DataFile.dat"))
             {
+                FileStream OpenData = new FileStream("DataFile.dat", FileMode.Open);
+
                 try
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
                     Data.Class1.Gold = Convert.ToInt32(formatter.Deserialize(OpenData));
+                    Data.Class1.Exp = Convert.ToInt32(formatter.Deserialize(OpenData));
+                    Data.Class1.Level = Convert.ToInt32(formatter.Deserialize(OpenData));
+                    Data.Class1.RequiredExp = Convert.ToInt32(formatter.Deserialize(OpenData));
 
                 }
                 catch
@@ -70,9 +79,10 @@ namespace 당나귀키우기
                 }
                 finally
                 {
+
                     OpenData.Close();
                 }
-            }     
+            }
         }
 
         private void Inv_Click(object sender, EventArgs e)
@@ -88,15 +98,26 @@ namespace 당나귀키우기
 
         private void Refresh_Tick(object sender, EventArgs e)
         {
+          
+                if (Class1.Exp > Class1.RequiredExp) 
+                {
+                    Data.Class1.Level++;
+                    Class1.Exp -= Class1.RequiredExp;
+                    Data.Class1.RequiredExp += 5 ;
+                }
+                else if(Data.Class1.Exp == Data.Class1.RequiredExp)
+                {
+                    Data.Class1.Level++;
+                    Data.Class1.Exp = 0;
+                    Data.Class1.RequiredExp += 5;
+                 }
+                
+
+                
+          
             ExpProgressBar.Style = ProgressBarStyle.Continuous;
-            ExpProgressBar.Maximum = Data.Class1.RequiredExp;
-            ExpProgressBar.Value = Data.Class1.Exp;
-            if(Data.Class1.Exp == Data.Class1.RequiredExp)
-            {
-                Data.Class1.Level++;
-                Data.Class1.Exp = 0;
-                Data.Class1.RequiredExp += 5;
-            }
+                ExpProgressBar.Maximum = Data.Class1.RequiredExp;
+                ExpProgressBar.Value = Data.Class1.Exp;
             GoldLabel.Text = "골드 : " + Data.Class1.Gold + "원";
             LvLabel.Text = "레벨 : " + Data.Class1.Level;
             ExpLabel.Text = "경험치 : " + Data.Class1.Exp + "/" + Data.Class1.RequiredExp;
@@ -105,6 +126,27 @@ namespace 당나귀키우기
         private void button1_Click(object sender, EventArgs e)
         {
             Data.Class1.Exp++;
+        }
+
+        private void ExpProgressBar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProgressBarTimer_Tick(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void Adventure_Click_1(object sender, EventArgs e)
+        {
+            EpSelect epselect = new EpSelect();
+            if (Data.Class2.EpStIsOpened == false)
+            {
+                epselect.Show();
+                epselect.Location = new Point(this.Location.X + 280, this.Location.Y + 100);
+                Data.Class2.EpStIsOpened = true;
+            }
         }
     }
 }

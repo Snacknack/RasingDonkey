@@ -17,6 +17,7 @@ namespace Data
     class Class2 
     {
         public static bool InvIsOpened = false;
+        public static bool EpStIsOpened = false;
 
     }
 }

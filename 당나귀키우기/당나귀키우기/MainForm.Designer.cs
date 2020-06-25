@@ -35,6 +35,8 @@
             this.ExpLabel = new System.Windows.Forms.Label();
             this.LvLabel = new System.Windows.Forms.Label();
             this.Refresh = new System.Windows.Forms.Timer(this.components);
+            this.ProgressBarTimer = new System.Windows.Forms.Timer(this.components);
+            this.Adventure = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // GoldLabel
@@ -63,6 +65,7 @@
             this.ExpProgressBar.Size = new System.Drawing.Size(758, 23);
             this.ExpProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ExpProgressBar.TabIndex = 0;
+            this.ExpProgressBar.Click += new System.EventHandler(this.ExpProgressBar_Click);
             // 
             // ExpLabel
             // 
@@ -87,11 +90,28 @@
             this.Refresh.Interval = 1;
             this.Refresh.Tick += new System.EventHandler(this.Refresh_Tick);
             // 
+            // ProgressBarTimer
+            // 
+            this.ProgressBarTimer.Enabled = true;
+            this.ProgressBarTimer.Interval = 1;
+            this.ProgressBarTimer.Tick += new System.EventHandler(this.ProgressBarTimer_Tick);
+            // 
+            // Adventure
+            // 
+            this.Adventure.Location = new System.Drawing.Point(697, 19);
+            this.Adventure.Name = "Adventure";
+            this.Adventure.Size = new System.Drawing.Size(75, 50);
+            this.Adventure.TabIndex = 5;
+            this.Adventure.Text = "탐험";
+            this.Adventure.UseVisualStyleBackColor = true;
+            this.Adventure.Click += new System.EventHandler(this.Adventure_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.Adventure);
             this.Controls.Add(this.LvLabel);
             this.Controls.Add(this.ExpLabel);
             this.Controls.Add(this.ExpProgressBar);
@@ -117,5 +137,7 @@
         private System.Windows.Forms.Label ExpLabel;
         private System.Windows.Forms.Label LvLabel;
         private System.Windows.Forms.Timer Refresh;
+        private System.Windows.Forms.Timer ProgressBarTimer;
+        private System.Windows.Forms.Button Adventure;
     }
 }
