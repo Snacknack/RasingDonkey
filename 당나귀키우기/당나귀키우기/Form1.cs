@@ -19,6 +19,7 @@ namespace 당나귀키우기
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             MainForm mainform = new MainForm();
             this.Hide();
             mainform.Show();

@@ -13,6 +13,7 @@ namespace Data
         public static int Level = 1;
         public static int Exp = 0;
         public static int RequiredExp = 10;
+        public static int Volume = 25;
     }
 
     class Class2 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Authentication.ExtendedProtection;
@@ -12,16 +13,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data;
+using WMPLib;
 
 namespace 당나귀키우기
 {
     public partial class MainForm : Form
     {
-        
+        WindowsMediaPlayer windowsmediaplayer = new WindowsMediaPlayer();
         public MainForm()
         {
             InitializeComponent();
             Refresh.Enabled = true;
+            if (File.Exists("Background.dmp"))
+            {
+                windowsmediaplayer.URL = "Background.dmp";
+                trackBar1.Value = Data.Class1.Volume;
+            }
             
            
         }
@@ -36,6 +43,7 @@ namespace 당나귀키우기
                 formatter.Serialize(SaveData, Data.Class1.Exp);
                 formatter.Serialize(SaveData, Data.Class1.Level);
                 formatter.Serialize(SaveData, Data.Class1.RequiredExp);
+                formatter.Serialize(SaveData, Data.Class1.Volume);
             }
             catch
             {
@@ -51,6 +59,10 @@ namespace 당나귀키우기
         private void MainForm_Load(object sender, EventArgs e)
         {
             OpenFile(sender, e);
+            windowsmediaplayer.controls.play();
+            
+            
+
         }
 
 
@@ -72,12 +84,13 @@ namespace 당나귀키우기
                     Data.Class1.Exp = Convert.ToInt32(formatter.Deserialize(OpenData));
                     Data.Class1.Level = Convert.ToInt32(formatter.Deserialize(OpenData));
                     Data.Class1.RequiredExp = Convert.ToInt32(formatter.Deserialize(OpenData));
+                    Data.Class1.Volume = Convert.ToInt32(formatter.Deserialize(OpenData));
 
                 }
                 catch
                 {
                     Console.WriteLine("파일 불러오기 실패");
-                    throw;
+                
                 }
                 finally
                 {
@@ -113,8 +126,10 @@ namespace 당나귀키우기
                     Data.Class1.Exp = 0;
                     Data.Class1.RequiredExp += 5;
                  }
-                
-
+            
+            Data.Class1.Volume = trackBar1.Value;
+            Volume.Text = "음량 : " + Data.Class1.Volume;
+            windowsmediaplayer.settings.volume = Data.Class1.Volume;
                 
           
             ExpProgressBar.Style = ProgressBarStyle.Continuous;
@@ -170,6 +185,11 @@ namespace 당나귀키우기
                 shop.Location = new Point(this.Location.X, this.Location.Y);
                 Data.Class2.ShopIsOpened = true;
             }   
+        }
+
+        private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
