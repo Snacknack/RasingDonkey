@@ -791,7 +791,7 @@
             this.MaximizeBox = false;
             this.Name = "Shop";
             this.ShowInTaskbar = false;
-            this.Text = "Shop";
+            this.Text = "상점";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Shop_FormClosing);
             this.Load += new System.EventHandler(this.Shop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ItemPic1)).EndInit();
