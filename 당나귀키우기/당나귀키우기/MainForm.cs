@@ -13,21 +13,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data;
-using WMPLib;
+//using WMPLib;
 
 namespace 당나귀키우기
 {
     public partial class MainForm : Form
     {
-        WindowsMediaPlayer windowsmediaplayer = new WindowsMediaPlayer();
+        //WindowsMediaPlayer windowsmediaplayer = new WindowsMediaPlayer();
         public MainForm()
         {
             InitializeComponent();
             Refresh.Enabled = true;
             if (File.Exists("Background.dmp"))
             {
-                windowsmediaplayer.URL = "Background.dmp";
-                trackBar1.Value = Data.Class1.Volume;
+                //windowsmediaplayer.URL = "Background.dmp";
+                //trackBar1.Value = Data.Class1.Volume;
             }
             
            
@@ -59,7 +59,7 @@ namespace 당나귀키우기
         private void MainForm_Load(object sender, EventArgs e)
         {
             OpenFile(sender, e);
-            windowsmediaplayer.controls.play();
+            //windowsmediaplayer.controls.play();
             
             
 
@@ -127,9 +127,9 @@ namespace 당나귀키우기
                     Data.Class1.RequiredExp += 5;
                  }
             
-            Data.Class1.Volume = trackBar1.Value;
-            Volume.Text = "음량 : " + Data.Class1.Volume;
-            windowsmediaplayer.settings.volume = Data.Class1.Volume;
+           // Data.Class1.Volume = //trackBar1.Value;
+            //Volume.Text = "음량 : " + Data.Class1.Volume;
+           // windowsmediaplayer.settings.volume = Data.Class1.Volume;
                 
           
             ExpProgressBar.Style = ProgressBarStyle.Continuous;
@@ -138,6 +138,7 @@ namespace 당나귀키우기
             GoldLabel.Text = "골드 : " + Data.Class1.Gold + "원";
             LvLabel.Text = "레벨 : " + Data.Class1.Level;
             ExpLabel.Text = "경험치 : " + Data.Class1.Exp + "/" + Data.Class1.RequiredExp;
+            NameBox.Text = "사용자 : " +  Data.Class3.Username;
         }
 
         private void button1_Click(object sender, EventArgs e)

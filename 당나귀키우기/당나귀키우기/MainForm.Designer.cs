@@ -40,9 +40,7 @@
             this.Adventure = new System.Windows.Forms.Button();
             this.ShopBtn = new System.Windows.Forms.Button();
             this.LogList = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.Volume = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.NameBox = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // GoldLabel
@@ -134,33 +132,20 @@
             this.LogList.TabIndex = 6;
             this.LogList.TabStop = false;
             // 
-            // trackBar1
+            // NameBox
             // 
-            this.trackBar1.Location = new System.Drawing.Point(14, 265);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
-            this.trackBar1.TabIndex = 8;
-            this.trackBar1.TabStop = false;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 25;
-            // 
-            // Volume
-            // 
-            this.Volume.AutoSize = true;
-            this.Volume.Location = new System.Drawing.Point(12, 250);
-            this.Volume.Name = "Volume";
-            this.Volume.Size = new System.Drawing.Size(41, 12);
-            this.Volume.TabIndex = 9;
-            this.Volume.Text = "음량 : ";
+            this.NameBox.AutoSize = true;
+            this.NameBox.Location = new System.Drawing.Point(178, 9);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(0, 12);
+            this.NameBox.TabIndex = 7;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.Volume);
-            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.LogList);
             this.Controls.Add(this.ShopBtn);
             this.Controls.Add(this.Adventure);
@@ -177,7 +162,6 @@
             this.Text = "당나귀 키우기";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,7 +179,6 @@
         private System.Windows.Forms.Button Adventure;
         private System.Windows.Forms.Button ShopBtn;
         private System.Windows.Forms.TextBox LogList;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private System.Windows.Forms.Label Volume;
+        private System.Windows.Forms.Label NameBox;
     }
 }

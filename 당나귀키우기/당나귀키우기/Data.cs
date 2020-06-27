@@ -28,5 +28,6 @@ namespace Data
     {
         public static bool LogOnOff = false;
         public static string Log;
+        public static string Username;
     }
 }

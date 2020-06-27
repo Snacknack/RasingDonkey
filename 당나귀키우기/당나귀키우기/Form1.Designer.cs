@@ -62,13 +62,16 @@
             this.IdBox.Name = "IdBox";
             this.IdBox.Size = new System.Drawing.Size(190, 21);
             this.IdBox.TabIndex = 1;
+            this.IdBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.IdBox_KeyDown);
             // 
             // PwBox
             // 
             this.PwBox.Location = new System.Drawing.Point(86, 188);
             this.PwBox.Name = "PwBox";
+            this.PwBox.PasswordChar = '●';
             this.PwBox.Size = new System.Drawing.Size(190, 21);
             this.PwBox.TabIndex = 2;
+            this.PwBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PwBox_KeyDown);
             // 
             // First
             // 
@@ -86,6 +89,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "시작 창";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.First_FormClosing);
+            this.Load += new System.EventHandler(this.First_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
