@@ -30,4 +30,15 @@ namespace Data
         public static string Log;
         public static string Username;
     }
+
+    class Class4
+    {
+        public static int item1 = 0; // 0이면 없는것 포션 물약
+    }
+
+    class ItemPrice
+    {
+        public static int[] itemPrice = new int[21]; 
+        
+    }
 }

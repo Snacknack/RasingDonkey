@@ -44,6 +44,7 @@ namespace 당나귀키우기
                 formatter.Serialize(SaveData, Data.Class1.Level);
                 formatter.Serialize(SaveData, Data.Class1.RequiredExp);
                 formatter.Serialize(SaveData, Data.Class1.Volume);
+                formatter.Serialize(SaveData, Data.Class4.item1);
             }
             catch
             {
@@ -85,6 +86,7 @@ namespace 당나귀키우기
                     Data.Class1.Level = Convert.ToInt32(formatter.Deserialize(OpenData));
                     Data.Class1.RequiredExp = Convert.ToInt32(formatter.Deserialize(OpenData));
                     Data.Class1.Volume = Convert.ToInt32(formatter.Deserialize(OpenData));
+                    Data.Class4.item1 = Convert.ToInt32(formatter.Deserialize(OpenData));
 
                 }
                 catch

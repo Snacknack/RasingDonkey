@@ -130,16 +130,18 @@
             // 
             // ItemPic1
             // 
+            this.ItemPic1.Image = global::당나귀키우기.Properties.Resources.ExpPotion;
             this.ItemPic1.Location = new System.Drawing.Point(22, 51);
             this.ItemPic1.Name = "ItemPic1";
             this.ItemPic1.Size = new System.Drawing.Size(100, 100);
+            this.ItemPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ItemPic1.TabIndex = 1;
             this.ItemPic1.TabStop = false;
             // 
             // Price1
             // 
             this.Price1.AutoSize = true;
-            this.Price1.Location = new System.Drawing.Point(60, 162);
+            this.Price1.Location = new System.Drawing.Point(37, 162);
             this.Price1.Name = "Price1";
             this.Price1.Size = new System.Drawing.Size(17, 12);
             this.Price1.TabIndex = 2;

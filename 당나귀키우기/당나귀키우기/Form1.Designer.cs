@@ -33,6 +33,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.IdBox = new System.Windows.Forms.TextBox();
             this.PwBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,11 +76,33 @@
             this.PwBox.TabIndex = 2;
             this.PwBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PwBox_KeyDown);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "label2";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::당나귀키우기.Properties.Resources.Snacknack;
+            this.pictureBox1.Location = new System.Drawing.Point(409, 187);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // First
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 261);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.PwBox);
             this.Controls.Add(this.IdBox);
             this.Controls.Add(this.button1);
@@ -90,6 +115,7 @@
             this.Text = "시작 창";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.First_FormClosing);
             this.Load += new System.EventHandler(this.First_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,6 +127,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox IdBox;
         private System.Windows.Forms.TextBox PwBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
