@@ -157,7 +157,11 @@ namespace 당나귀키우기
         {
             if (Data.Class3.LogOnOff)
             {
+                if(LogList.TextLength >= LogList.MaxLength ){
+                    LogList.Clear();
+                }
                 LogList.Text += Data.Class3.Log + "\r\n";
+                
                 Data.Class3.Log = "";
                 this.LogList.SelectionStart = LogList.Text.Length;
                 this.LogList.ScrollToCaret();
@@ -191,6 +195,11 @@ namespace 당나귀키우기
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogList_TextChanged(object sender, EventArgs e)
         {
 
         }

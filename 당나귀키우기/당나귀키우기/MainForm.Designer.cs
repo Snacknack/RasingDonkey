@@ -46,14 +46,16 @@
             // GoldLabel
             // 
             this.GoldLabel.AutoSize = true;
+            this.GoldLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.GoldLabel.Location = new System.Drawing.Point(12, 9);
             this.GoldLabel.Name = "GoldLabel";
-            this.GoldLabel.Size = new System.Drawing.Size(41, 12);
+            this.GoldLabel.Size = new System.Drawing.Size(47, 17);
             this.GoldLabel.TabIndex = 0;
             this.GoldLabel.Text = "골드 : ";
             // 
             // Inv
             // 
+            this.Inv.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Inv.Location = new System.Drawing.Point(12, 346);
             this.Inv.Name = "Inv";
             this.Inv.Size = new System.Drawing.Size(75, 50);
@@ -74,18 +76,20 @@
             // ExpLabel
             // 
             this.ExpLabel.AutoSize = true;
-            this.ExpLabel.Location = new System.Drawing.Point(12, 411);
+            this.ExpLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.ExpLabel.Location = new System.Drawing.Point(12, 405);
             this.ExpLabel.Name = "ExpLabel";
-            this.ExpLabel.Size = new System.Drawing.Size(53, 12);
+            this.ExpLabel.Size = new System.Drawing.Size(60, 17);
             this.ExpLabel.TabIndex = 3;
             this.ExpLabel.Text = "경험치 : ";
             // 
             // LvLabel
             // 
             this.LvLabel.AutoSize = true;
+            this.LvLabel.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LvLabel.Location = new System.Drawing.Point(12, 38);
             this.LvLabel.Name = "LvLabel";
-            this.LvLabel.Size = new System.Drawing.Size(41, 12);
+            this.LvLabel.Size = new System.Drawing.Size(47, 17);
             this.LvLabel.TabIndex = 4;
             this.LvLabel.Text = "레벨 : ";
             // 
@@ -102,6 +106,7 @@
             // 
             // Adventure
             // 
+            this.Adventure.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Adventure.Location = new System.Drawing.Point(697, 19);
             this.Adventure.Name = "Adventure";
             this.Adventure.Size = new System.Drawing.Size(75, 50);
@@ -112,6 +117,7 @@
             // 
             // ShopBtn
             // 
+            this.ShopBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.ShopBtn.Location = new System.Drawing.Point(93, 346);
             this.ShopBtn.Name = "ShopBtn";
             this.ShopBtn.Size = new System.Drawing.Size(75, 50);
@@ -123,6 +129,7 @@
             // 
             // LogList
             // 
+            this.LogList.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.LogList.Location = new System.Drawing.Point(14, 69);
             this.LogList.Multiline = true;
             this.LogList.Name = "LogList";
@@ -131,13 +138,15 @@
             this.LogList.Size = new System.Drawing.Size(154, 168);
             this.LogList.TabIndex = 6;
             this.LogList.TabStop = false;
+            this.LogList.TextChanged += new System.EventHandler(this.LogList_TextChanged);
             // 
             // NameBox
             // 
             this.NameBox.AutoSize = true;
+            this.NameBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.NameBox.Location = new System.Drawing.Point(178, 9);
             this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(0, 12);
+            this.NameBox.Size = new System.Drawing.Size(0, 17);
             this.NameBox.TabIndex = 7;
             // 
             // MainForm

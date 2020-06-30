@@ -73,9 +73,29 @@ namespace 당나귀키우기.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap RasingDonkeyLogo {
+            get {
+                object obj = ResourceManager.GetObject("RasingDonkeyLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap Snacknack {
             get {
                 object obj = ResourceManager.GetObject("Snacknack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SnacknackLogo {
+            get {
+                object obj = ResourceManager.GetObject("SnacknackLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
